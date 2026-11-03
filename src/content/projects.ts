@@ -269,9 +269,21 @@ export const projects: Project[] = [
       },
       {
         src: "/media/callidus-bancada.webp",
-        alt: "Bancada do estágio com o painel de monitoramento do Callidus Link",
+        alt: "Site do CETEIA, do IF Baiano, aberto no notebook e no monitor da minha mesa no estágio",
         width: 900,
         height: 416,
+      },
+      {
+        src: "/media/ceteia-reuniao.webp",
+        alt: "Reunião da equipe de desenvolvimento do CETEIA numa sala do IF Baiano",
+        width: 711,
+        height: 400,
+      },
+      {
+        src: "/media/ceteia-apresentacao.webp",
+        alt: "Apresentação do site do CETEIA por videochamada, numa sala do IF Baiano",
+        width: 400,
+        height: 400,
       },
     ],
   },
