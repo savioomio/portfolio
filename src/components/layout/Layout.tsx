@@ -38,7 +38,8 @@ export function Layout() {
   const { pathname } = useLocation();
 
   return (
-    <>
+    // Coluna com altura mínima da tela: o rodapé fica no fim mesmo em página curta
+    <div className="flex min-h-svh flex-col">
       <ScrollManager />
       <SiteHeader />
       <ErrorBoundary key={pathname} fallback={<PageError />}>
@@ -47,6 +48,6 @@ export function Layout() {
         </Suspense>
       </ErrorBoundary>
       <SiteFooter />
-    </>
+    </div>
   );
 }
