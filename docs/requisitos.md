@@ -161,7 +161,7 @@ O projeto partiu do portfólio pessoal ([ADR 0001](./adr/0001-reaproveitar-portf
 | 7 | Interface | Identidade visual própria, cena 3D (React Three Fiber), componentes em `components/ui/` | `Button`/`Card`/`Input` padronizados e reaproveitados; teste responsivo documentado |
 | 8 | Performance | Seções da Home e cena 3D com `React.lazy`; `manualChunks`; imagens WebP com `loading="lazy"`; `rollup-plugin-visualizer` instalado | Medir Lighthouse mobile; `srcset`/`sizes`; 2 imagens `.jfif`; cache da API; dashboard em chunk separado |
 | 9 | Testes | — | Tudo |
-| 10 | Deploy | `https://webdev.savioomiodev.com.br` (Cloudflare Workers, `npm run deploy`); CI valida o build | Deploy automático a cada push; **link na Vercel** (exigido na entrega) |
+| 10 | Deploy | `https://savioomiodev.com.br` (Cloudflare Workers, `npm run deploy`); CI valida o build | Deploy automático a cada push; **link na Vercel** (exigido na entrega) |
 | 11 | Versionamento | Histórico novo desde 20/10 em Conventional Commits | commitlint + Husky; branch por funcionalidade; proteção da `main`; padrões no README e no `CLAUDE.md` |
 | 12 | Arquitetura | TypeScript, ESLint, pastas `components`, `pages`, `hooks`, `lib` | `services/`; Prettier; lint-staged; convenções escritas |
 | — | Repositório | Público | `.env.example`; README atualizado (o atual cita Cloudflare Pages, `About.tsx` e `DESIGN_SYSTEM.md`, que não existem) |

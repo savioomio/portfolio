@@ -46,7 +46,7 @@ Siga o `CLAUDE.md` (seção Código): componente visual não chama API; nomes em
 
 ## 7. Deploy
 
-O merge dispara o job **Deploy na Cloudflare**. Acompanhe com `gh run watch` e confira a mudança em <https://webdev.savioomiodev.com.br> com a skill `conferir-no-navegador`.
+O merge dispara o job **Deploy na Cloudflare**. Acompanhe com `gh run watch` e confira a mudança em <https://savioomiodev.com.br> com a skill `conferir-no-navegador`.
 
 ## 8. Relatório
 

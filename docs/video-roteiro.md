@@ -4,7 +4,7 @@ Máximo de 8 minutos, com rosto e tela visíveis o tempo todo, publicado como **
 
 ## Antes de gravar: abas abertas, nesta ordem
 
-1. O site publicado, no topo: https://webdev.savioomiodev.com.br
+1. O site publicado, no topo: https://savioomiodev.com.br
 2. `docs/diagramas.md` (pastas e fluxo de dados), no editor ou no GitHub
 3. A aba Actions do GitHub, com um deploy verde
 4. A pasta `docs/adr`

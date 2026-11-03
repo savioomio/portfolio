@@ -57,7 +57,7 @@ Supabase (destaques) ──► services/projects.ts ──┘
 
 ```
 branch feature/x ──► commit ──► push ──► Pull Request ──► CI ──► merge na main ──► deploy automático
-                      │                                  │                         └─ Cloudflare: webdev.savioomiodev.com.br
+                      │                                  │                         └─ Cloudflare: savioomiodev.com.br
                       │                                  └─ lint + testes + build (obrigatório para o merge)
                       └─ Husky: lint-staged (ESLint + Prettier) e commitlint (Conventional Commits)
 ```

@@ -2,7 +2,7 @@ export const site = {
   name: "Sávio Pessôa",
   fullName: "Sávio Pessôa Afonso",
   title: "Especialista E-commerce VTEX e Wake",
-  url: "https://webdev.savioomiodev.com.br",
+  url: "https://savioomiodev.com.br",
   email: "saviopessoaafonso@gmail.com",
   github: "https://github.com/savioomio",
   githubUser: "savioomio",
