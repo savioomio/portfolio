@@ -1,6 +1,6 @@
 import type { Project } from "@/content/projects";
 import { projects } from "@/content/projects";
-import { site, stores } from "@/content/site";
+import { site } from "@/content/site";
 import type { GithubRepo } from "@/types/github";
 
 export interface SeoData {
@@ -48,7 +48,8 @@ function breadcrumbs(items: { name: string; path?: string }[]) {
 export function seoForHome(): SeoData {
   return {
     title: `${site.name} | Especialista E-commerce VTEX e Wake`,
-    description: `Desenvolvedor front-end especialista em e-commerce: ${stores.vtex} participações em lojas VTEX, ${stores.wake} em Wake, ${stores.wordpress} projetos em WordPress para blogs de e-commerce e 2 anos de experiência no mercado.`,
+    description:
+      "Desenvolvedor front-end especialista em e-commerce, com foco em VTEX e Wake. Veja lojas, experiência e projetos.",
     path: "/",
     type: "profile",
     jsonLd: [
