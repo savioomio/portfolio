@@ -1,100 +1,85 @@
-# Roteiro do vídeo
+# Roteiro do vídeo (5 minutos)
 
-Até 8 minutos, com rosto e tela visíveis o tempo todo, publicado como **não listado** no YouTube. O texto tem cerca de 1.000 palavras, o que dá 7 min 30 s em ritmo de conversa. Use como guia e fale com as suas palavras.
+Máximo de 8 minutos, com rosto e tela visíveis o tempo todo, publicado como **não listado** no YouTube. Este roteiro tem cerca de 700 palavras, o que dá 5 minutos em ritmo de conversa. Fale com as suas palavras: o texto é um guia, não uma leitura.
 
-## Antes de gravar
+## Antes de gravar: abas abertas, nesta ordem
 
-- Deixe abertos: o site publicado, o repositório no GitHub, `docs/diagramas.md`, o PR #15 e o terminal na pasta do projeto.
-- Grave fora da rede do lab, por causa do limite da API do GitHub.
-- Faça login no dashboard antes, em outra aba.
-- Abra o PageSpeed já com o resultado, pelos links de `docs/qualidade/lighthouse.md`, para não esperar em vídeo.
-- Revise uma mensagem de teste no dashboard para mostrar "marcar como respondida".
+1. O site publicado, no topo: https://webdev.savioomiodev.com.br
+2. `docs/diagramas.md` (pastas e fluxo de dados), no editor ou no GitHub
+3. A aba Actions do GitHub, com um deploy verde
+4. A pasta `docs/adr`
+5. `CLAUDE.md`, `.claude/settings.json`, `.claude/hooks/guard-bash.mjs`, `.claude/skills/`, `.claude/agents/`, `.mcp.json`
+6. A lista de PRs fechados no GitHub
 
-## Abertura (0:00 a 0:25)
+Grave fora da rede do laboratório e com o rosto sempre na câmera.
 
-**Tela:** site aberto no topo.
+## Abertura (0:00 a 0:30)
 
-> Oi, eu sou o Sávio, desenvolvedor front-end especialista em e-commerce. Meu forte é VTEX, também participei de entregas em Wake, e estudo Engenharia de Software na FIAP. Este é o meu portfólio. Vou mostrar a stack, por que escolhi cada peça, e o harness de IA que montei para desenvolver.
+**Tela:** o site no topo; role devagar até a caixa dobrar.
 
-**Tela:** role devagar até a caixa dobrar.
-
-> Sou da área de loja, então a identidade nasceu de uma faca de embalagem: a folha com linhas de corte e vinco dobra em caixa, sacola e envelope conforme a rolagem.
-
-## Parte 1: stack e arquitetura (0:25 a 3:00)
-
-**Tela:** `docs/diagramas.md`, diagrama de pastas.
-
-> É um site em React 19 com TypeScript e Vite. O estilo é Tailwind, o 3D é Three.js, as rotas são React Router, os dados passam pelo TanStack Query, o backend é Supabase, e o site está na Cloudflare.
+> Oi, eu sou o Sávio, desenvolvedor front-end especialista em e-commerce, com foco em VTEX. Este é o meu portfólio, e hoje eu vou mostrar a stack, por que escolhi cada peça e o conjunto de IA que montei para desenvolver.
 >
-> O critério para dividir os componentes é a responsabilidade. Em `ui` ficam peças que só apresentam, como botão, cartão e skeleton. `sections` e `pages` montam a tela. A lógica fica nos hooks, e só os `services` falam com APIs. A regra é: componente visual não chama API.
+> Como eu trabalho com loja, a identidade nasceu de uma faca de embalagem: a folha dobra em caixa, sacola e envelope conforme a rolagem, com a cor de cada plataforma.
 
-**Tela:** diagrama de fluxo de dados. Depois abra `src/hooks/useRepos.ts` e `src/services/github.ts`.
+## Parte 1: stack e arquitetura (0:30 a 1:50)
 
-> Veja os projetos: a API do GitHub entra pelo service, o hook `useRepos` guarda em cache, e o cartão só recebe os dados. Vou provar: abro a aba Network, rolo até o GitHub, entro num projeto e volto. Foi uma requisição só.
+**Tela:** `docs/diagramas.md`, o diagrama de pastas.
 
-**Tela:** Network mostrando uma chamada. Depois uma rota inexistente e o F5 em `/projetos/platao`.
+> É um site em React 19 com TypeScript e Vite. O estilo é Tailwind, o 3D é Three.js, as rotas são React Router, os dados passam pelo TanStack Query, o backend é Supabase, e o site roda na Cloudflare.
+>
+> Dividi os componentes por responsabilidade. Em `ui` ficam as peças que só apresentam. `sections` e `pages` montam a tela. A lógica fica nos hooks, e só os services falam com APIs. A regra é: componente visual nunca chama API.
 
-> O formulário valida por campo, salva no banco e manda e-mail. O dashboard fica atrás de login.
+**Tela:** diagrama do fluxo de dados.
 
-**Tela:** erros do formulário, botão com spinner, `/dashboard` indo para `/login`. Faça login, marque uma mensagem como respondida e escolha um destaque.
+> O caminho é sempre o mesmo: a API do GitHub entra pelo service, o hook guarda em cache, e o componente só recebe o dado. O formulário de contato valida, salva no Supabase e manda e-mail. O painel fica atrás de login.
 
-**Tela:** diagrama da branch até o deploy e a aba Actions.
+**Tela:** diagrama da branch até o deploy, depois a aba Actions.
 
-> Uma alteração nasce numa branch própria. No commit, o Husky roda lint, formatação e o padrão da mensagem. No PR, o CI repete tudo e roda os testes. Com o verde, o merge na `main` dispara o deploy na Cloudflare. A `main` é protegida: nem eu consigo dar push direto.
+> Uma alteração nasce numa branch própria. No commit, o Husky roda lint, formatação e o padrão da mensagem. No pull request, o CI repete tudo e roda os testes. Com o verde, o merge na `main` faz o deploy automático na Cloudflare. A `main` é protegida: nem eu consigo dar push direto.
 
-## Parte 2: justificativas da stack (3:00 a 5:40)
+## Parte 2: justificativas da stack (1:50 a 3:20)
 
-**Tela:** pasta `docs/adr` e um arquivo aberto a cada decisão.
+**Tela:** pasta `docs/adr`. Abra os arquivos citados, só mostrando o título.
 
-> Toda escolha passou por uma comparação em `docs/research` e virou um ADR, com o que aceitei perder. Vou citar as principais.
+> Toda escolha passou por uma comparação e virou um ADR, que é um registro de decisão com o que eu aceitei perder.
+>
+> **Three.js direto.** Comparei com React Three Fiber. O critério foi controlar a rolagem sem renderizar o React a cada quadro. Perdi a escrita declarativa das cenas.
+>
+> **React Router com TanStack Query.** Comparei com SWR e fetch manual. O critério foi cache entre páginas, porque a API do GitHub só dá 60 chamadas por hora. Aceitei alguns kilobytes a mais.
+>
+> **Supabase.** Comparei com Firebase e PocketBase. O critério foi login pronto e regra de acesso no banco, sem servidor próprio: o visitante só insere, e só eu leio. Perdi um captcha mais forte contra spam.
+>
+> **Pré-renderização.** O site era uma SPA, e toda rota devolvia o mesmo HTML. Agora cada página sai pronta no build, o que ajuda o SEO. Aceitei um build mais longo.
+>
+> **Cloudflare no lugar da Vercel.** O enunciado pedia Vercel, mas já tenho domínio na Cloudflare. O requisito de fundo é deploy automático, e está cumprido. Foi uma decisão consciente, registrada.
 
-- **Three.js direto** (ADR 0008)
-  > Comparei com React Three Fiber, que já vinha no projeto. O critério foi controlar a rolagem sem renderizar o React a cada quadro. Perdi a escrita declarativa das cenas.
-- **React Router e TanStack Query** (ADR 0009)
-  > Comparei com TanStack Router, wouter, SWR e fetch manual. O critério foi cache entre páginas, porque a API do GitHub só dá 60 requisições por hora por IP. Aceitei cerca de 12 kB a mais no pacote.
-- **Supabase e Formspree** (ADR 0010)
-  > Comparei com Firebase, Appwrite e PocketBase. O critério foi login pronto e regra de acesso no banco, sem servidor próprio. O visitante só insere, e só eu leio. O que aceitei perder: uma função com captcha seria mais forte contra spam, mas pedia muito mais passos. Fiquei com o RLS, limite de tamanho e um campo-armadilha.
-- **React Hook Form e Zod** (ADR 0011)
-  > Comparei com Formik e validação manual. Foi a opção mais pesada, e aceitei isso em troca de tipos e de menos renderização. Para compensar, o formulário só carrega quando a seção chega perto.
-- **Tema com script no head** (ADR 0012)
-  > O `next-themes` já estava instalado, mas não evitava o flash em toda página. Um script antes da primeira pintura resolve, com cerca de 40 linhas minhas.
-- **Pré-renderização** (ADR 0014)
-  > Como SPA, toda rota devolvia o mesmo HTML. Agora cada rota sai pronta no build, e endereço inexistente responde 404 de verdade. Aceitei um build mais longo e o cuidado de não usar `window` durante o render.
-- **Vercel** (ADR 0004)
-  > O enunciado pedia Vercel. Comparei manter as duas hospedagens com ficar só na Cloudflare, e escolhi a Cloudflare, que já tinha domínio próprio. O requisito é deploy automático, e isso está cumprido. Foi uma decisão consciente, registrada no repositório.
-
-**Tela:** resultado do PageSpeed, celular e desktop.
-
-> Na performance, a Home marca 100 no PageSpeed, no celular e no desktop. O maior ganho foi adiar o 3D até o primeiro gesto da pessoa. Mas o PageSpeed não faz gestos, então ele não mede o 3D. Por isso medi à parte, num celular lento simulado: o 3D leva 1,6 segundo para entrar depois do primeiro toque. O resto está em `docs/qualidade`.
-
-## Parte 3: harness de IA (5:40 a 7:40)
+## Parte 3: harness de IA (3:20 a 4:40)
 
 **Tela:** `CLAUDE.md`.
 
-> A ferramenta é o Claude Code, com o modelo Claude Opus. Comparei com Cursor e Copilot, e o critério principal foi garantir regra por código, não só por texto, com tudo versionado no repositório. O que aceitei perder: é uma ferramenta paga.
+> A ferramenta é o Claude Code, com modelos Claude da Anthropic. Comparei com Cursor e Copilot, e o critério foi garantir regra por código, não só por texto, com tudo versionado no repositório. Aceitei que é uma ferramenta paga.
 >
-> O `CLAUDE.md` traz o fluxo, a arquitetura e a nomenclatura. A IA lê no início de cada sessão, então não preciso repetir.
+> O `CLAUDE.md` traz o fluxo, a arquitetura e a nomenclatura. A IA lê no começo de cada sessão, então eu não repito.
 
 **Tela:** `.claude/settings.json` e `.claude/hooks/guard-bash.mjs`.
 
-> Texto a IA pode esquecer, então as regras críticas viraram hooks. Este aqui bloqueia pular os hooks do Git, mudar a configuração global e publicar no Worker do meu site pessoal. Criar token e segredo continua sendo comigo.
+> Texto a IA pode esquecer, então as regras críticas viraram hooks. Este bloqueia pular os hooks do Git, mexer na configuração global e publicar no site pessoal. Token e senha continuam comigo.
 
-**Tela:** `.claude/skills/tarefa/SKILL.md`, depois `decisao`.
+**Tela:** `.claude/skills/`, depois `.claude/agents/` e `.mcp.json`.
 
-> As skills são receitas. A `tarefa` faz o ciclo inteiro, do backlog ao deploy conferido. A `decisao` obriga a passar por research e ADR antes de adicionar uma tecnologia. A `impeccable` guiou o design.
+> As skills são receitas: a `tarefa` faz o ciclo do backlog até o deploy conferido, e a `decisao` obriga a pesquisar e escrever o ADR antes de adicionar tecnologia. Os agentes são especialistas: um pesquisa com documentação oficial, outro revisa o diff contra as regras. E o MCP traz a documentação da Cloudflare e o banco para dentro da conversa.
 
-**Tela:** `.claude/agents/` e `.mcp.json`.
+**Tela:** a lista de PRs fechados.
 
-> Os agents são especialistas: o `pesquisador` compara opções com documentação oficial, e o `revisor` lê o diff contra as regras do projeto. O MCP traz a documentação da Cloudflare para dentro da conversa.
+> Na prática, cada tarefa virou uma branch, commits no padrão e um PR integrado só com o CI verde. A IA escreveu boa parte do código, mas as decisões são minhas e eu sei explicar cada uma.
 
-**Tela:** PR #15 no GitHub, depois a lista de PRs.
+## Fecho (4:40 a 5:00)
 
-> Na prática, foi assim: pedi a identidade, a IA criou a branch, fez os commits no padrão, abriu o PR e só integrou com o CI verde. E as camadas se protegem: num commit, um caminho errado fez os hooks locais serem ignorados, e foi o CI que garantiu a checagem. Por isso os mesmos testes rodam nos dois lugares.
->
-> A IA escreveu a maior parte do código, mas as decisões são minhas, e sei explicar cada uma: estão escritas nos ADRs.
+**Tela:** volte ao site e role pelo trilho de projetos, parando no card do Platão.
 
-## Fecho (7:40 a 8:00)
+> Esse é o portfólio: um site de loja feito por quem faz loja, com a minha história de robótica, drones e sistemas reais. Obrigado!
 
-**Tela:** o trilho horizontal passando pelos projetos.
+## Se travar
 
-> Esse é o portfólio: um site de loja feito por quem faz loja, com a minha história de robótica, drones e sistemas reais no final. Obrigado!
+- Esqueceu uma frase: siga para a próxima tela, o ADR e o diagrama sustentam o que você disser.
+- Pergunta provável: "por que não Vercel?" Resposta: pedido no enunciado, mas o requisito é deploy automático; já tenho domínio na Cloudflare; está no ADR 0004.
