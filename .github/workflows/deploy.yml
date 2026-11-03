@@ -78,7 +78,7 @@ jobs:
       cancel-in-progress: false
     environment:
       name: producao
-      url: https://webdev.savioomiodev.com.br
+      url: https://savioomiodev.com.br
 
     steps:
       - name: Clonar o repositorio

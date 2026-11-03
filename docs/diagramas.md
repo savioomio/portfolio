@@ -62,7 +62,7 @@ flowchart LR
   e --> f["Merge na main"]
   f --> g["Build com<br/>pré-renderização"]
   g --> h["Deploy na Cloudflare"]
-  h --> i["webdev.savioomiodev.com.br"]
+  h --> i["savioomiodev.com.br"]
 ```
 
 ## Como uma página chega ao navegador

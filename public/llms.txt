@@ -4,9 +4,9 @@
 
 ## Páginas
 
-- [Início](https://webdev.savioomiodev.com.br/): lojas, experiência, projetos e contato
-- [Projetos](https://webdev.savioomiodev.com.br/projetos): projetos em destaque e repositórios públicos
-- [Platão](https://webdev.savioomiodev.com.br/projetos/platao): app de ajuda em call para quem atende VTEX e Wake
-- [Synesthesia](https://webdev.savioomiodev.com.br/projetos/synesthesia): app Android que transforma a cena em filtro e trilha sonora
-- [GasMaster](https://webdev.savioomiodev.com.br/projetos/gasmaster): sistema usado por 2 postos de gasolina
-- [Drones Guanambi](https://webdev.savioomiodev.com.br/projetos/drones-guanambi): vitória na DronesIFSC 2023 e participação na IMAV 2024
+- [Início](https://savioomiodev.com.br/): lojas, experiência, projetos e contato
+- [Projetos](https://savioomiodev.com.br/projetos): projetos em destaque e repositórios públicos
+- [Platão](https://savioomiodev.com.br/projetos/platao): app de ajuda em call para quem atende VTEX e Wake
+- [Synesthesia](https://savioomiodev.com.br/projetos/synesthesia): app Android que transforma a cena em filtro e trilha sonora
+- [GasMaster](https://savioomiodev.com.br/projetos/gasmaster): sistema usado por 2 postos de gasolina
+- [Drones Guanambi](https://savioomiodev.com.br/projetos/drones-guanambi): vitória na DronesIFSC 2023 e participação na IMAV 2024

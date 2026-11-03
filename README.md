@@ -6,7 +6,7 @@ Trabalho da disciplina de Web Development da FIAP, entregue em 03/11/2026.
 
 | | |
 | --- | --- |
-| Site | https://webdev.savioomiodev.com.br |
+| Site | https://savioomiodev.com.br |
 | Repositório | https://github.com/savioomio/portfolio-webdev |
 | Vídeo | Link entregue no Teams |
 

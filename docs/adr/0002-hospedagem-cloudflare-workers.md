@@ -21,7 +21,7 @@ O site precisa de uma URL pública e o enunciado pede o link da Vercel na entreg
 
 ## Decisão
 
-Worker novo `portfolio-webdev`, servindo o `dist/` como Static Assets, no domínio `webdev.savioomiodev.com.br`. Configuração em `wrangler.jsonc`, deploy com `npm run deploy`. A Vercel entra como segunda hospedagem do mesmo build (T07).
+Worker novo `portfolio-webdev`, servindo o `dist/` como Static Assets, no domínio `savioomiodev.com.br`. Configuração em `wrangler.jsonc`, deploy com `npm run deploy`. A Vercel entra como segunda hospedagem do mesmo build (T07).
 
 ## O que aceitamos perder
 

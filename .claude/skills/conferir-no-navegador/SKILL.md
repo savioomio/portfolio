@@ -9,7 +9,7 @@ description: Confere uma mudança no navegador do Savio (site local ou publicado
 
 - **No Mac:** o navegador é o Comet, sem Google Chrome. Use o CLI `dev-browser`, conectado ao WebSocket lido de `~/Library/Application Support/Comet/DevToolsActivePort` (primeira linha é a porta, segunda é o caminho), sempre com `browser.getPage("portfolio")`. O processo do `dev-browser` guarda a conexão: o Allow aparece uma vez só e tudo fica na mesma aba.
 - **No PC do lab:** as ferramentas `mcp__chrome-devtools__*` precisam estar disponíveis. Se não estiverem, siga o passo 4 de `docs/runbooks/setup-pc-do-lab.md`.
-- Site local: `npm run dev` em segundo plano, em <http://localhost:5173>. Site publicado: <https://webdev.savioomiodev.com.br>.
+- Site local: `npm run dev` em segundo plano, em <http://localhost:5173>. Site publicado: <https://savioomiodev.com.br>.
 
 ## Passos
 

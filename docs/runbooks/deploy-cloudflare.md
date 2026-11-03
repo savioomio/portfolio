@@ -1,6 +1,6 @@
 # Runbook: deploy na Cloudflare
 
-Publica o build em `https://webdev.savioomiodev.com.br` (Worker `portfolio-webdev`). Decisões em [ADR 0002](../adr/0002-hospedagem-cloudflare-workers.md) (hospedagem) e [ADR 0005](../adr/0005-deploy-automatico-github-actions.md) (deploy automático).
+Publica o build em `https://savioomiodev.com.br` (Worker `portfolio-webdev`). Decisões em [ADR 0002](../adr/0002-hospedagem-cloudflare-workers.md) (hospedagem) e [ADR 0005](../adr/0005-deploy-automatico-github-actions.md) (deploy automático).
 
 > **Atenção:** o Worker `savioomiodev` é o **site pessoal**. Antes de qualquer deploy, confira que `wrangler.jsonc` tem `"name": "portfolio-webdev"`.
 
@@ -47,7 +47,7 @@ A saída termina com as URLs e o `Current Version ID`. Anote o ID se for precisa
 
 ```bash
 for p in / /links /projetos/teste /rota-que-nao-existe; do
-  printf "%s -> " "$p"; curl -s -o /dev/null -w "%{http_code}\n" "https://webdev.savioomiodev.com.br$p"
+  printf "%s -> " "$p"; curl -s -o /dev/null -w "%{http_code}\n" "https://savioomiodev.com.br$p"
 done
 ```
 

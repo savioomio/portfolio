@@ -5,7 +5,7 @@
 
 ## Contexto
 
-O enunciado pede o link da Vercel na entrega, e o [ADR 0002](./0002-hospedagem-cloudflare-workers.md) previa a Vercel como segunda hospedagem do mesmo build. O site já está público em `https://webdev.savioomiodev.com.br` (Worker `portfolio-webdev`). O requisito 10 pede uma URL pública e publicação automática, sem exigir uma plataforma específica. Segundo o Savio, o professor aceita a URL da Cloudflare no lugar da Vercel.
+O enunciado pede o link da Vercel na entrega, e o [ADR 0002](./0002-hospedagem-cloudflare-workers.md) previa a Vercel como segunda hospedagem do mesmo build. O site já está público em `https://savioomiodev.com.br` (Worker `portfolio-webdev`). O requisito 10 pede uma URL pública e publicação automática, sem exigir uma plataforma específica. Segundo o Savio, o professor aceita a URL da Cloudflare no lugar da Vercel.
 
 ## Opções consideradas
 
@@ -19,7 +19,7 @@ O enunciado pede o link da Vercel na entrega, e o [ADR 0002](./0002-hospedagem-c
 
 ## Decisão
 
-Só Cloudflare. Na entrega, o link da Vercel é substituído por `https://webdev.savioomiodev.com.br`.
+Só Cloudflare. Na entrega, o link da Vercel é substituído por `https://savioomiodev.com.br`.
 
 ## O que aceitamos perder
 

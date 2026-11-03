@@ -1,5 +1,5 @@
 {
-  // Worker separado do site pessoal (savioomiodev): deploy aqui nunca sobrescreve o dominio principal.
+  // Este Worker serve o dominio principal. O Worker antigo (savioomiodev) ficou sem dominio e nao recebe mais deploy.
   "name": "portfolio-webdev",
   // Conta da Cloudflare (o ID nao e segredo); assim o deploy pelo CI so precisa do CLOUDFLARE_API_TOKEN.
   "account_id": "f44313ac7ffa8ff75063bb54ff40b6f0",
@@ -12,5 +12,10 @@
     // Rota desconhecida responde 404 de verdade, com o 404.html, que abre o app no navegador.
     "not_found_handling": "404-page",
   },
-  "routes": [{ "pattern": "webdev.savioomiodev.com.br", "custom_domain": true }],
+  "routes": [
+    { "pattern": "savioomiodev.com.br", "custom_domain": true },
+    { "pattern": "www.savioomiodev.com.br", "custom_domain": true },
+    // Endereco antigo do trabalho: segue respondendo, e a URL canonica aponta para o dominio principal.
+    { "pattern": "webdev.savioomiodev.com.br", "custom_domain": true },
+  ],
 }
