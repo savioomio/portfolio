@@ -20,7 +20,7 @@ O job precisa do segredo `CLOUDFLARE_API_TOKEN` no GitHub. O ID da conta já est
 1. Em <https://dash.cloudflare.com/profile/api-tokens>: **Create Token** → modelo **Edit Cloudflare Workers** → **Use template**.
 2. **Account Resources:** Include → `Saviopessoaafonso@gmail.com's Account`. **Zone Resources:** Include → Specific zone → `savioomiodev.com.br`.
 3. **Continue to summary** → **Create Token** → copie o token (ele só aparece uma vez).
-4. Em <https://github.com/savioomio/portfolio-webdev/settings/secrets/actions>: **New repository secret**, nome `CLOUDFLARE_API_TOKEN`, cole o token e salve. Pelo terminal: `gh secret set CLOUDFLARE_API_TOKEN` e cole quando pedir.
+4. Em <https://github.com/savioomio/portfolio/settings/secrets/actions>: **New repository secret**, nome `CLOUDFLARE_API_TOKEN`, cole o token e salve. Pelo terminal: `gh secret set CLOUDFLARE_API_TOKEN` e cole quando pedir.
 5. Rode o job de novo em **Actions** (ou faça um merge) e confira que ele passou.
 
 Se o job falhar com erro de permissão no domínio, edite o token e acrescente **Zone → DNS → Edit** para `savioomiodev.com.br`.

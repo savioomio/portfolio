@@ -7,7 +7,7 @@ Trabalho da disciplina de Web Development da FIAP, entregue em 03/11/2026.
 | | |
 | --- | --- |
 | Site | https://savioomiodev.com.br |
-| Repositório | https://github.com/savioomio/portfolio-webdev |
+| Repositório | https://github.com/savioomio/portfolio |
 | Vídeo | Link entregue no Teams |
 
 ## Tecnologias
@@ -30,8 +30,8 @@ Trabalho da disciplina de Web Development da FIAP, entregue em 03/11/2026.
 Pré-requisitos: Node.js 22 e npm.
 
 ```bash
-git clone https://github.com/savioomio/portfolio-webdev.git
-cd portfolio-webdev
+git clone https://github.com/savioomio/portfolio.git
+cd portfolio
 npm install
 cp .env.example .env
 npm run dev

@@ -13,7 +13,7 @@ const fields = [
   { key: "wordpress", label: "Projetos WordPress" },
 ] as const;
 
-const ACTIONS_URL = "https://github.com/savioomio/portfolio-webdev/actions/workflows/deploy.yml";
+const ACTIONS_URL = "https://github.com/savioomio/portfolio/actions/workflows/deploy.yml";
 
 /** O site é gerado no build: o número salvo aqui vai ao ar no próximo build. */
 export function StoreCountsForm() {

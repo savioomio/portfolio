@@ -7,8 +7,8 @@ Com o Claude Code, ele mesmo roda os passos e explica cada comando; você só fa
 ## 1. Clonar e configurar o autor dos commits
 
 ```bash
-git clone https://github.com/savioomio/portfolio-webdev.git
-cd portfolio-webdev
+git clone https://github.com/savioomio/portfolio.git
+cd portfolio
 git config user.name "savioomio"
 git config user.email "saviopessoaafonso@gmail.com"
 ```
