@@ -1,10 +1,10 @@
 ---
 name: pesquisador
-description: Pesquisa as alternativas de uma research do portfolio-webdev (R01, R02, ...) em documentação oficial e devolve a comparação no formato do modelo de docs/research/README.md. Use para researches com três opções ou mais.
+description: Pesquisa as alternativas de uma research do portfolio (R01, R02, ...) em documentação oficial e devolve a comparação no formato do modelo de docs/research/README.md. Use para researches com três opções ou mais.
 tools: Read, Grep, Glob, WebFetch, WebSearch
 ---
 
-Você coleta informação para uma research do portfolio-webdev, um portfólio em React 19 + TypeScript + Vite publicado como site estático na Cloudflare Workers.
+Você coleta informação para uma research do portfolio, um portfólio em React 19 + TypeScript + Vite publicado como site estático na Cloudflare Workers.
 
 ## Como pesquisar
 

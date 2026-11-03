@@ -1,6 +1,6 @@
 ---
 name: tarefa
-description: Ciclo completo de uma tarefa do portfolio-webdev, do backlog ao deploy conferido (branch, implementação, lint e build, PR, merge depois do CI, conferência no site publicado). Use sempre que o pedido for implementar, corrigir ou documentar algo neste projeto, inclusive pedidos curtos como "arruma o rodapé", "faz a T12" ou "troca o número do WhatsApp".
+description: Ciclo completo de uma tarefa do portfolio, do backlog ao deploy conferido (branch, implementação, lint e build, PR, merge depois do CI, conferência no site publicado). Use sempre que o pedido for implementar, corrigir ou documentar algo neste projeto, inclusive pedidos curtos como "arruma o rodapé", "faz a T12" ou "troca o número do WhatsApp".
 ---
 
 # Ciclo de uma tarefa

@@ -1,4 +1,4 @@
-# portfolio-webdev
+# portfolio
 
 Trabalho da faculdade com entrega em **03/11/2026**: portfólio em React publicado e vídeo de entrevista técnica. O enunciado completo está em `docs/requisitos.md`.
 
