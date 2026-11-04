@@ -23,6 +23,8 @@ const person = {
   name: site.fullName,
   alternateName: ["Sávio Pessôa", "Savio Pessoa", "savioomio"],
   url: `${site.url}/`,
+  // Foto de rosto: é o que a busca pelo nome mostra ao lado do resultado
+  image: `${site.url}/media/savio-perfil-2.webp`,
   jobTitle: "Desenvolvedor Front-End especialista em e-commerce",
   worksFor: { "@type": "Organization", name: "Wicomm" },
   alumniOf: [
@@ -47,7 +49,7 @@ function breadcrumbs(items: { name: string; path?: string }[]) {
 
 export function seoForHome(): SeoData {
   return {
-    title: `${site.name} | Especialista E-commerce VTEX e Wake`,
+    title: `${site.fullName} | Especialista E-commerce VTEX e Wake`,
     description:
       "Desenvolvedor front-end especialista em e-commerce, com foco em VTEX e Wake. Veja lojas, experiência e projetos.",
     path: "/",
