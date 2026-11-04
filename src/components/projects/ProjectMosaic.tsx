@@ -48,13 +48,32 @@ export function ProjectMosaic({ project }: { project: Project }) {
               className="mosaic-tile"
               style={{ flex: `${tile.ratio} ${tile.ratio} 0`, aspectRatio: tile.ratio }}
             >
-              <img
-                src={tile.image}
-                alt={tile.alt}
-                loading="lazy"
-                {...zoom({ src: tile.src, alt: tile.alt, poster: tile.poster })}
-                srcSet={hdSrcSet(tile.image)}
-              />
+              {tile.poster ? (
+                // Vídeo de verdade na página, para o Google achar; só baixa quando a pessoa clica
+                <button
+                  type="button"
+                  className="mosaic-media"
+                  {...zoom({ src: tile.src, alt: tile.alt, poster: tile.poster })}
+                >
+                  <video
+                    src={tile.src}
+                    poster={tile.poster}
+                    preload="none"
+                    muted
+                    playsInline
+                    tabIndex={-1}
+                    aria-hidden="true"
+                  />
+                </button>
+              ) : (
+                <img
+                  src={tile.image}
+                  alt={tile.alt}
+                  loading="lazy"
+                  {...zoom({ src: tile.src, alt: tile.alt })}
+                  srcSet={hdSrcSet(tile.image)}
+                />
+              )}
               {tile.poster && (
                 <span className="mosaic-play" aria-hidden="true">
                   <Play className="size-6 fill-current" />
