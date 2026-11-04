@@ -6,7 +6,9 @@ describe("renderSeoTags", () => {
   it("escreve título, canônica e dados estruturados da Home", () => {
     const tags = renderSeoTags(seoForHome());
 
-    expect(tags).toContain("<title>Sávio Pessôa | Especialista E-commerce VTEX e Wake</title>");
+    expect(tags).toContain(
+      "<title>Sávio Pessôa Afonso | Especialista E-commerce VTEX e Wake</title>",
+    );
     expect(tags).toContain('rel="canonical" href="https://savioomiodev.com.br/"');
     expect(tags).toContain('"@type":"ProfilePage"');
   });
