@@ -83,6 +83,23 @@ export function seoForProjects(): SeoData {
   };
 }
 
+/** Data em que os vídeos foram publicados no site; o Google exige uma no VideoObject. */
+const VIDEOS_PUBLISHED = "2026-10-31T00:00:00-03:00";
+
+function videosOf(project: Project) {
+  return [...(project.video ? [project.video] : []), ...(project.moreVideos ?? [])].map(
+    (video) => ({
+      "@type": "VideoObject",
+      name: video.label,
+      description: `${video.label}. ${project.description}`,
+      thumbnailUrl: absolute(video.poster),
+      contentUrl: absolute(video.src),
+      uploadDate: VIDEOS_PUBLISHED,
+      author: { "@id": person["@id"] },
+    }),
+  );
+}
+
 export function seoForProject(project: Project): SeoData {
   const path = `/projetos/${project.slug}`;
   return {
@@ -107,6 +124,7 @@ export function seoForProject(project: Project): SeoData {
         { name: "Projetos", path: "/projetos" },
         { name: project.name },
       ]),
+      ...videosOf(project),
     ],
   };
 }

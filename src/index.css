@@ -630,14 +630,24 @@
     border-radius: clamp(8px, 1.2vw, 16px);
     background: var(--gold-soft, #f3e7c4);
   }
-  .mosaic-tile img {
+  .mosaic-tile img,
+  .mosaic-tile video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
-  .mosaic-tile:hover img {
+  .mosaic-tile:hover img,
+  .mosaic-tile:hover video {
     transform: scale(1.03);
+  }
+  .mosaic-media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
   }
   .mosaic-play {
     position: absolute;
@@ -2023,7 +2033,8 @@
   .zoom[open] {
     animation: none;
   }
-  .mosaic-tile img {
+  .mosaic-tile img,
+  .mosaic-tile video {
     transition: none;
   }
   .links-bag,

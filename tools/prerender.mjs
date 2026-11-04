@@ -67,10 +67,13 @@ for (const route of routes) {
     const images = [
       ...new Set([...html.matchAll(/<img[^>]*\ssrc="(\/media\/[^"]+)"/g)].map((m) => m[1])),
     ];
+    // Vídeos declarados no SEO da página viram entradas de vídeo no sitemap
+    const videos = (seo.jsonLd ?? []).filter((item) => item["@type"] === "VideoObject");
     sitemap.push({
       loc: `${site.url}${route === "/" ? "/" : route}`,
       lastmod: repo?.pushed_at,
       images,
+      videos,
     });
   }
 }
@@ -81,18 +84,31 @@ await writeFile(
   fillHead(seoForNotFound()).replace("<!--app-html-->", ""),
 );
 
+const xml = (text) =>
+  String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
 const urls = sitemap
-  .map(({ loc, lastmod, images = [] }) => {
+  .map(({ loc, lastmod, images = [], videos = [] }) => {
     const date = lastmod ? `<lastmod>${lastmod.slice(0, 10)}</lastmod>` : "";
     const pics = images
       .map((src) => `<image:image><image:loc>${site.url}${src}</image:loc></image:image>`)
       .join("");
-    return `  <url><loc>${loc}</loc>${date}${pics}</url>`;
+    const clips = videos
+      .map(
+        (video) =>
+          `<video:video><video:thumbnail_loc>${video.thumbnailUrl}</video:thumbnail_loc>` +
+          `<video:title>${xml(video.name)}</video:title>` +
+          `<video:description>${xml(video.description)}</video:description>` +
+          `<video:content_loc>${video.contentUrl}</video:content_loc>` +
+          `<video:publication_date>${video.uploadDate}</video:publication_date></video:video>`,
+      )
+      .join("");
+    return `  <url><loc>${loc}</loc>${date}${pics}${clips}</url>`;
   })
   .join("\n");
 await writeFile(
   path.join(dist, "sitemap.xml"),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${urls}\n</urlset>\n`,
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">\n${urls}\n</urlset>\n`,
 );
 
 await rm(path.join(root, "dist-ssr"), { recursive: true, force: true });
